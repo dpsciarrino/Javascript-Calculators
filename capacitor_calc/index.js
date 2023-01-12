@@ -6,6 +6,7 @@ var method;
 var mode;
 
 // Dynamic Input Checking
+// Removes everything thats NOT an integer or floating point number
 var validNumber = new RegExp(/^\d*\.?\d*$/);
 var lastVal = ""
 function checkInput(elem) {
@@ -18,22 +19,26 @@ function checkInput(elem) {
 
 // Calculate Router
 function calculate(){
+    // Convert prefixed values to actual
     convert_user_values();
 
     mode = document.getElementById('modes').value
     method = document.getElementById('methods').value
 
+    // Series Capacitor Calculations
     if(mode == 'series'){
         if(method == 'Ceq'){ calc_series_ceq(); }
         if(method == 'C1'){ calc_series_c1(); }
         if(method == 'C2'){ calc_series_c2(); }
     }
+    // Parallel Capacitor Calculations
     else if(mode == 'parallel'){
         if(method == 'Ceq'){ calc_parallel_ceq(); }
         if(method == 'C1'){ calc_parallel_c1(); }
         if(method == 'C2'){ calc_parallel_c2(); }
     }
 
+    // Convert actual to prefixed version for display
     convert_to_original_unit();
 
 
@@ -41,7 +46,7 @@ function calculate(){
 
 }
 
-// Compute prefix value
+// Used to convert actual number to prefixed form
 function prefix_to_divisor(prefix) {
     if(prefix == 'pf'){
         return (1 / 1000000000000);
@@ -58,6 +63,7 @@ function prefix_to_divisor(prefix) {
     return 1;
 }
 
+// Used to convert prefixed value to actual number
 function prefix_to_multiplier(prefix) {
     if(prefix == 'pf'){
         return 1000000000000;

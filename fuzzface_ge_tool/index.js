@@ -91,7 +91,7 @@ function display_field(value, field_name, decimal_accuracy){
     }
 }
 
-// Displays the current values in associated fields
+// Displays the current values in associated fields for first measurement
 function displayValues1(){
     display_field(R1, 'R1', 2);
     display_field(R2, 'R2', 3);
@@ -99,6 +99,7 @@ function displayValues1(){
     display_field(Vcc, 'Vcc', 3);
 }
 
+// Displays the current values in associated fields for second measurement
 function displayValues2(){
     display_field(V2, 'v2', 3);
     display_field(V_adj, 'v-adjusted', 3);
