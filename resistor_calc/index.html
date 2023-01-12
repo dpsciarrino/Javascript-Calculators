@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div>
+            <p>Resistor R1:</p>
+            <input id="R1" type="text" value="" onkeyup="checkInput(this)">
+            <select name="r1-unit" id="r1-unit">
+                <option value="ohms">&#8486;</option>
+                <option value="kohms">k&#8486;</option>
+                <option value="Mohms">M&#8486;</option>
+            </select>
+        </div>
+
+        <div>
+            <p>Resistor R2:</p>
+            <input id="R2" type="text" value="" onkeyup="checkInput(this)">
+            <select name="r2-unit" id="r2-unit">
+                <option value="ohms">&#8486;</option>
+                <option value="kohms">k&#8486;</option>
+                <option value="Mohms">M&#8486;</option>
+            </select>
+        </div>
+
+        <div>
+            <p>Equivalent Resistance (Req):</p>
+            <input id="Req" type="text" value="" onkeyup="checkInput(this)">
+            <select name="req-unit" id="req-unit">
+                <option value="ohms">&#8486;</option>
+                <option value="kohms">k&#8486;</option>
+                <option value="Mohms">M&#8486;</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="method">Value to calculate:</label>
+            <select name="method" id="methods" onchange="selectionListener()">
+                <option value="Req">Req</option>
+                <option value="R1">R1</option>
+                <option value="R2">R2</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="mode">Series/Parallel:</label>
+            <select name="mode" id="modes" onchange="modeListener()">
+                <option value="series">Series</option>
+                <option value="parallel">Parallel</option>
+            </select>
+        </div>
+
+        <div>
+            <button onclick="calculate()">Calculate</button>
+        </div>
+
+    </body>
+</html>

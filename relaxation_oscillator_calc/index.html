@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div>
+            <p>Resistor R1:</p>
+            <input id="R1" type="text" value="" onkeyup="checkInput(this)" style="background-color:lightgreen;">
+            <select name="r1-unit" id="r1-unit" onchange="unitListener(this)">
+                <option value="ohms">Ω</option>
+                <option value="kohms" selected="selected">kΩ</option>
+                <option value="Mohms">MΩ</option>
+            </select>
+        </div>
+        <div>
+            <p>Resistor R2:</p>
+            <input id="R2" type="text" value="" onkeyup="checkInput(this)"  disabled="true" style="background-color:lightgrey;">
+            <select name="r2-unit" id="r2-unit" onchange="unitListener(this)">
+                <option value="ohms">Ω</option>
+                <option value="kohms" selected="selected">kΩ</option>
+                <option value="Mohms">MΩ</option>
+            </select>
+        </div>
+        <div>
+            <p>Resistor R3:</p>
+            <input id="R3" type="text" value="" onkeyup="checkInput(this)" style="background-color:lightgreen;">
+            <select name="r3-unit" id="r3-unit" onchange="unitListener(this)">
+                <option value="ohms">Ω</option>
+                <option value="kohms" selected="selected">kΩ</option>
+                <option value="Mohms">MΩ</option>
+            </select>
+        </div>
+        <div>
+            <p>Capacitor C:</p>
+            <input id="C" type="text" value="" onkeyup="checkInput(this)" style="background-color:lightgreen;">
+            <select name="c-unit" id="c-unit" onchange="unitListener(this)">
+                <option value="pf">pF</option>
+                <option value="nf">nF</option>
+                <option value="uf" selected="selected">uF</option>
+                <option value="mf">mF</option>
+            </select>
+        </div>
+        <hr>
+
+        <div>
+            <p>Gain (K):</p>
+            <input id="K" type="text" value="" onkeyup="checkInput(this)" disabled="true" style="background-color:lightgrey;">
+        </div>
+        <div>
+            <p>Frequency (f):</p>
+            <input id="f" type="text" value="" onkeyup="checkInput(this)" disabled="true" style="background-color:lightgrey;">
+            <select name="f-unit" id="f-unit" onchange="unitListener(this)">
+                <option value="Hz">Hz</option>
+                <option value="kHz" selected="selected">kHz</option>
+                <option value="MHz">MHz</option>
+                <option value="GHz">GHz</option>
+            </select>
+        </div>
+
+        <div>
+            <p>Period (T):</p>
+            <input id="T" type="text" value="" onkeyup="checkInput(this)" disabled="true" style="background-color:lightgrey;">
+            <select name="period-unit" id="period-unit" onchange="unitListener(this)">
+                <option value="ns">ns</option>
+                <option value="us">us</option>
+                <option value="ms" selected="selected">ms</option>
+                <option value="s">s</option></select>
+        </div>
+
+        <div>
+            <label for="f_or_t">Frequency/Period</label>
+            
+            <select name="f_or_t" id="f_or_t" onchange="setOutputParamListener()" disabled="true">
+            
+            <option value="f" selected="selected">
+            Frequency
+            </option>
+            
+            <option value="t">
+            Period
+            </option>
+            
+            </select>
+            
+        </div>
+        
+
+        <div>
+            <label for="method">Method:</label>
+            <select name="method" id="methods" onchange="selectionListener()">
+                <option value="none">None</option>
+                <option value="method1">Solve for R3</option>
+                <option value="method2">Solve for C</option>
+            </select>
+        </div>
+
+        <div>
+            <button onclick="calculate()">Calculate</button>
+        </div>
+
+    </body>
+</html>

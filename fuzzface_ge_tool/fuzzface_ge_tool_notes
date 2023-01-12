@@ -1,0 +1,20 @@
+Fuzz Face Calculator
+
+Leakage Measurement:
+- R1 Value (default = 2.2M)
+- R2 Value (default = 2.472k)
+- Voltage 1:
+
+- Shows:
+  - Estimated leakage current in uA (I_leakage = V1 / R2)
+  - Perceived gain: (hFE_perceived = V1 * 100)
+
+hFE Measurement:
+- Voltage 2:
+
+- Shows:
+  - Adjusted Voltage (V_adj = V2 - V1)
+  - hFE = V_adj * 100
+  
+
+

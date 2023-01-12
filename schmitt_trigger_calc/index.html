@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div>
+            <p>Resistor R:</p>
+            <input id="R" type="text" value="" onkeyup="checkInput(this)" style="background-color:lightgreen;">
+            <select name="r-unit" id="r-unit" onchange="unitListener(this)">
+                <option value="ohms">Ω</option>
+                <option value="kohms" selected="selected">kΩ</option>
+                <option value="Mohms">MΩ</option>
+            </select>
+        </div>
+        <div>
+            <p>Capacitor C:</p>
+            <input id="C" type="text" value="" onkeyup="checkInput(this)" style="background-color:lightgreen;">
+            <select name="c-unit" id="c-unit" onchange="unitListener(this)">
+                <option value="pf">pF</option>
+                <option value="nf">nF</option>
+                <option value="uf" selected="selected">uF</option>
+            </select>
+        </div>
+        <div>
+            <p>Supply Voltage Vcc (V):</p>
+            <input id="Vcc" type="text" value="" onkeyup="checkInput(this)" style="background-color:lightgreen;">
+        </div>
+        <div>
+            <p>Upper Threshold (V):</p>
+            <input id="Vt+" type="text" value="" onkeyup="checkInput(this)" disabled="true" style="background-color:lightgrey;">
+        </div>
+        <div>
+            <p>Lower Threshold (V):</p>
+            <input id="Vt-" type="text" value="" onkeyup="checkInput(this)" disabled="true" style="background-color:lightgrey;">
+        </div>
+
+        <hr>
+
+        <div>
+            <p>Oscillation Frequency:</p>
+            <input id="f" type="text" value="" onkeyup="checkInput(this)" disabled="true" style="background-color:whitesmoke;">
+            <select name="f-unit" id="f-unit" onchange="unitListener(this)">
+                <option value="Hz">Hz</option>
+                <option value="kHz" selected="selected">kHz</option>
+                <option value="MHz">MHz</option>
+                <option value="GHz">GHz</option>
+            </select>
+        </div>
+        <div>
+            <p>Period (T):</p>
+            <input id="T" type="text" value="" onkeyup="checkInput(this)" disabled="true" style="background-color:whitesmoke;">
+            <select name="period-unit" id="period-unit" onchange="unitListener(this)">
+                <option value="ns">ns</option>
+                <option value="us">us</option>
+                <option value="ms" selected="selected">ms</option>
+                <option value="s">s</option></select>
+        </div>
+        <div>
+            <p>High Pulse Width (%):</p>
+            <input id="th" type="text" value="50" onkeyup="checkInput(this)" disabled="true" style="background-color:lightgrey;">
+        </div>
+        <div>
+            <p>Low Pulse Width (%):</p>
+            <input id="tl" type="text" value="50" onkeyup="checkInput(this)" disabled="true" style="background-color:lightgrey;">
+        </div>
+        <div>
+            <label for="half-duty">50% Duty Cycle?</label> 
+            <select name="half-duty" id="half-duty" onchange="halfDutyListener(this)">
+                    <option value="no">No</option>
+                    <option value="yes" selected="selected">Yes</option>
+            </select>
+            
+        </div>
+        
+        <div>
+            <label for="f_or_t">Frequency/Period</label>
+            
+            <select name="f_or_t" id="f_or_t" disabled="true" onchange="freq_period_ParamListener()">
+            
+            <option value="f" selected="selected">
+                Frequency
+            </option>
+            
+            <option value="t">
+                Period
+            </option>
+            
+            </select>
+            
+        </div>
+
+        <div>
+            <label for="method">Method:</label>
+            <select name="method" id="methods" onchange="selectionListener()">
+                <option value="none">None</option>
+                <option value="method1">Solve for R</option>
+                <option value="method2">Solve for C</option>
+            </select>
+        </div>
+
+        <div>
+            <button onclick="calculate()">Calculate</button>
+        </div>
+
+    </body>
+</html>

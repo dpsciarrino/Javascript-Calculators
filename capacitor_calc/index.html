@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div>
+            <p>Capacitor C1:</p>
+            <input id="C1" type="text" value="" onkeyup="checkInput(this)">
+            <select name="c1-unit" id="c1-unit">
+                <option value="pf">pF</option>
+                <option value="nf">nF</option>
+                <option value="uF">uF</option>
+                <option value="mF">mF</option>
+            </select>
+        </div>
+
+        <div>
+            <p>Capacitor C2:</p>
+            <input id="C2" type="text" value="" onkeyup="checkInput(this)">
+            <select name="c2-unit" id="c2-unit">
+                <option value="pf">pF</option>
+                <option value="nf">nF</option>
+                <option value="uF">uF</option>
+                <option value="mF">mF</option>
+            </select>
+        </div>
+
+        <div>
+            <p>Equivalent Capacitance (Ceq):</p>
+            <input id="Ceq" type="text" value="" onkeyup="checkInput(this)">
+            <select name="ceq-unit" id="ceq-unit">
+                <option value="pf">pF</option>
+                <option value="nf">nF</option>
+                <option value="uF">uF</option>
+                <option value="mF">mF</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="method">Value to calculate:</label>
+            <select name="method" id="methods" onchange="selectionListener()">
+                <option value="Ceq">Ceq</option>
+                <option value="C1">C1</option>
+                <option value="C2">C2</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="mode">Series/Parallel:</label>
+            <select name="mode" id="modes" onchange="modeListener()">
+                <option value="series">Series</option>
+                <option value="parallel">Parallel</option>
+            </select>
+        </div>
+
+        <div>
+            <button onclick="calculate()">Calculate</button>
+        </div>
+
+    </body>
+</html>

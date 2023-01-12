@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div>
+            <p>Resistor R1:</p>
+            <input id="R1" type="text" value="" onkeyup="checkInput(this)">
+            <select name="r1-unit" id="r1-unit">
+                <option value="ohms">&#8486;</option>
+                <option value="kohms">k&#8486;</option>
+                <option value="Mohms">M&#8486;</option>
+            </select>
+        </div>
+        <div>
+            <p>Resistor R2:</p>
+            <input id="R2" type="text" value="" onkeyup="checkInput(this)">
+            <select name="r2-unit" id="r2-unit">
+                <option value="ohms">&#8486;</option>
+                <option value="kohms">k&#8486;</option>
+                <option value="Mohms">M&#8486;</option>
+            </select>
+        </div>
+        <div>
+            <p>Resistor R3:</p>
+            <input id="R3" type="text" value="" onkeyup="checkInput(this)">
+            <select name="r3-unit" id="r3-unit">
+                <option value="ohms">&#8486;</option>
+                <option value="kohms">k&#8486;</option>
+                <option value="Mohms">M&#8486;</option>
+            </select>
+        </div>
+        <div>
+            <p>Resistor R4:</p>
+            <input id="R4" type="text" value="" onkeyup="checkInput(this)">
+            <select name="r4-unit" id="r4-unit">
+                <option value="ohms">&#8486;</option>
+                <option value="kohms">k&#8486;</option>
+                <option value="Mohms">M&#8486;</option>
+            </select>
+        </div>
+        <div>
+            <p>Capacitor C1:</p>
+            <input id="C1" type="text" value="" onkeyup="checkInput(this)">
+            <select name="c1-unit" id="c1-unit">
+                <option value="pf">pF</option>
+                <option value="nf">nF</option>
+                <option value="uF">uF</option>
+                <option value="mF">mF</option>
+            </select>
+        </div>
+        <div>
+            <p>Capacitor C2:</p>
+            <input id="C2" type="text" value="" onkeyup="checkInput(this)">
+            <select name="c2-unit" id="c2-unit">
+                <option value="pf">pF</option>
+                <option value="nf">nF</option>
+                <option value="uF">uF</option>
+                <option value="mF">mF</option>
+            </select>
+        </div>
+
+        <hr>
+
+        <div>
+            <p>Gain (K):</p>
+            <input id="K" type="text" value="" onkeyup="checkInput(this)">
+        </div>
+        <div>
+            <p>Quality Factor (Q):</p>
+            <input id="Q" type="text" value="" onkeyup="checkInput(this)">
+        </div>
+        <div>
+            <p>Center Frequency (Fc):</p>
+            <input id="Fc" type="text" value="" onkeyup="checkInput(this)">
+            <select name="fc-unit" id="fc-unit">
+                <option value="Hz">Hz</option>
+                <option value="kHz">kHz</option>
+                <option value="MHz">MHz</option>
+                <option value="GHz">GHz</option>
+            </select>
+        </div>
+        <div>
+            <p>Scale Factor (FSF):</p>
+            <input id="FSF" type="text" value="" onkeyup="checkInput(this)">
+        </div>
+        <div>
+            <p>m:</p>
+            <input id="m" type="text" value="" onkeyup="checkInput(this)">
+        </div>
+        
+        <div>
+            <p>n:</p>
+            <input id="n" type="text" value="" onkeyup="checkInput(this)">
+        </div>
+
+        <div>
+            <label for="method">Method:</label>
+            <select name="method" id="methods" onchange="selectionListener()">
+                <option value="none">None</option>
+                <option value="method1">Method #1</option>
+                <option value="method2">Method #2</option>
+                <option value="method3">Method #3</option>
+            </select>
+        </div>
+
+        <div>
+            <button onclick="calculate()">Calculate</button>
+        </div>
+
+        <div>
+            <button onclick="defaults()">Default Values</button>
+        </div>
+
+    </body>
+</html>

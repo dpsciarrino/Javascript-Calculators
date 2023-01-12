@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div>
+            <p>Voltage Supply (V):</p>
+            <input id="Vcc" type="text" value="" onkeyup="checkInput(this)">
+        </div>
+
+        <div>
+            <p>Forward Voltage (V):</p>
+            <input id="Vf" type="text" value="" onkeyup="checkInput(this)">
+        </div>
+
+        <div>
+            <p>Forward Current (mA):</p>
+            <input id="If" type="text" value="" onkeyup="checkInput(this)">
+        </div>
+
+        <div>
+            <p>Current-Limiting Resistor (CLR):</p>
+            <input id="CLR" type="text" value="" onkeyup="checkInput(this)">
+            <select name="clr-unit" id="clr-unit" onchange="unitListener(this)">
+                <option value="ohms">&#8486;</option>
+                <option value="kohms" selected="selected">k&#8486;</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="method">Value to calculate:</label>
+            <select name="method" id="methods" onchange="selectionListener()">
+                <option value="CLR" selected="selected">CLR</option>
+                <option value="If">Forward Current</option>
+            </select>
+        </div>
+
+        <div>
+            <button onclick="calculate()">Calculate</button>
+        </div>
+
+    </body>
+</html>

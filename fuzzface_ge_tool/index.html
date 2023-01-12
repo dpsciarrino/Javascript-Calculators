@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div>
+            <p>Resistor R1 (MΩ):</p>
+            <input id="R1" type="text" value="2.2" onkeyup="checkInput(this)" style="background-color:lightgrey;">
+        </div>
+        <div>
+            <p>Resistor R2 (kΩ):</p>
+            <input id="R2" type="text" value="2.472" onkeyup="checkInput(this)" style="background-color:lightgrey;">
+        </div>
+        <div>
+            <p>Supply Voltage (V):</p>
+            <input id="Vcc" type="text" value="9.0" onkeyup="checkInput(this)" style="background-color:lightgrey;">
+        </div>
+
+        <div>
+            <p>Voltage 1 (V):</p>
+            <input id="v1" type="text" value="" onkeyup="checkInput(this)" style="background-color:lightgreen;">
+            <div id="v1-msg" style="display:none; color:red;">Please provide a leakage measurement.</div>
+        </div>
+
+        <div>
+            <p>Estimated Base Current (μA): <span id="i-base"></span></p>
+            <p>Estimated Leakage (μA): <span id="i-leakage"></span></p>
+            <p>Perceived hFE: <span id="hFE-perceived"></span></p>
+        </div>
+
+        <div>
+            <button onclick="calculate_leakage()">Enter</button>
+        </div>
+
+        <hr>
+
+        <div>
+            <p>Voltage 2 (V):</p>
+            <input id="v2" type="text" value="" disabled="true" onkeyup="checkInput(this)" style="background-color:lightgrey;">
+            <div id="v2-msg" style="display:none; color:red;">Please provide a voltage measurement.</div>
+            <div id="v2-msg2" style="display:none; color:red;">Second voltage can't be below first reading.</div>
+        </div>
+
+        <div>
+            <p>Adjusted Voltage (V): <span id="v-adjusted"></span></p>
+            <p>Approximate hFE: <strong><span id="hfe"></span></strong></p>
+        </div>
+
+        <div>
+            <button id="btn2" onclick="calculate_hFE()" disabled="true">Get hFE</button>
+        </div>
+
+        <hr>
+
+    </body>
+</html>
