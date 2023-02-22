@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div>
+            <p>Resistor R1:</p>
+            <input id="R1" type="text" value="430" onkeyup="checkInput(this)" style="background-color:lightgreen;">
+            <select name="r1-unit" id="r1-unit" onchange="unitListener(this)">
+                <option value="ohms">Ω</option>
+                <option value="kohms" selected="selected">kΩ</option>
+                <option value="Mohms">MΩ</option>
+            </select>
+        </div>
+        <div>
+            <p>Resistor R2:</p>
+            <input id="R2" type="text" value="43" onkeyup="checkInput(this)" style="background-color:lightgreen;">
+            <select name="r2-unit" id="r2-unit" onchange="unitListener(this)">
+                <option value="ohms">Ω</option>
+                <option value="kohms" selected="selected">kΩ</option>
+                <option value="Mohms">MΩ</option>
+            </select>
+        </div>
+        <div>
+            <p>Resistor R3:</p>
+            <input id="R3" type="text" value="10" onkeyup="checkInput(this)" style="background-color:lightgreen;">
+            <select name="r3-unit" id="r3-unit" onchange="unitListener(this)">
+                <option value="ohms">Ω</option>
+                <option value="kohms" selected="selected">kΩ</option>
+                <option value="Mohms">MΩ</option>
+            </select>
+        </div>
+        <div>
+            <p>Resistor R4:</p>
+            <input id="R4" type="text" value="390" onkeyup="checkInput(this)" style="background-color:lightgreen;">
+            <select name="r4-unit" id="r4-unit" onchange="unitListener(this)">
+                <option value="ohms" selected="selected">Ω</option>
+                <option value="kohms">kΩ</option>
+                <option value="Mohms">MΩ</option>
+            </select>
+        </div>
+
+        <div>
+            <p>Supply Voltage Vcc (V):</p>
+            <input id="Vcc" type="text" value="9" onkeyup="checkInput(this)" style="background-color:lightgreen;">
+        </div>
+        <div>
+            <p>Base-Emitter Voltage (V):</p>
+            <input id="Vbe" type="text" value="0.65" onkeyup="checkInput(this)" style="background-color:lightgreen;">
+        </div>
+        <div>
+            <p>Beta/hFE:</p>
+            <input id="beta" type="text" value="600" onkeyup="checkInput(this)" style="background-color:lightgreen;">
+        </div>
+
+        <div>
+            <button onclick="calculate()">Calculate</button>
+        </div>
+        
+        <hr>
+
+        <h2>Voltages:</h1>
+        <div>
+            <p>Collector Voltage Vc:</p>
+            <input id="Vc" type="text" value="" onkeyup="checkInput(this)" disabled="true" style="background-color:lightgrey;">
+            <select name="Vc-unit" id="Vc-unit" onchange="unitListener(this)">
+                <option value="V" selected="selected">V</option>
+                <option value="mV">mV</option>
+                <option value="uV">uV</option>
+                <option value="nV">nV</option>
+            </select>
+        </div>
+
+        <div>
+            <p>Base Voltage Vb:</p>
+            <input id="Vb" type="text" value="" onkeyup="checkInput(this)" disabled="true" style="background-color:lightgrey;">
+            <select name="Vb-unit" id="Vb-unit" onchange="unitListener(this)">
+                <option value="V">V</option>
+                <option value="mV" selected="selected">mV</option>
+                <option value="uV">uV</option>
+                <option value="nV">nV</option>
+            </select>
+        </div>
+
+        <div>
+            <p>Emitter Voltage Ve:</p>
+            <input id="Ve" type="text" value="" onkeyup="checkInput(this)" disabled="true" style="background-color:lightgrey;">
+            <select name="Ve-unit" id="Ve-unit" onchange="unitListener(this)">
+                <option value="V">V</option>
+                <option value="mV" selected="selected">mV</option>
+                <option value="uV">uV</option>
+                <option value="nV">nV</option>
+            </select>
+        </div>
+
+        <h2>Currents:</h2>
+        <div>
+            <p>Collector Current Ic:</p>
+            <input id="Ic" type="text" value="" onkeyup="checkInput(this)" disabled="true" style="background-color:lightgrey;">
+            <select name="Ic-unit" id="Ic-unit" onchange="unitListener(this)">
+                <option value="A">A</option>
+                <option value="mA">mA</option>
+                <option value="uA" selected="selected">uA</option>
+                <option value="nA">nA</option>
+            </select>
+        </div>
+
+        <div>
+            <p>Base Current Ib:</p>
+            <input id="Ib" type="text" value="" onkeyup="checkInput(this)" disabled="true" style="background-color:lightgrey;">
+            <select name="Ib-unit" id="Ib-unit" onchange="unitListener(this)">
+                <option value="mA">mA</option>
+                <option value="uA">uA</option>
+                <option value="nA" selected="selected">nA</option>
+            </select>
+        </div>
+
+        <div>
+            <p>Emitter Current Ie:</p>
+            <input id="Ie" type="text" value="" onkeyup="checkInput(this)" disabled="true" style="background-color:lightgrey;">
+            <select name="Ie-unit" id="Ie-unit" onchange="unitListener(this)">
+                <option value="A">A</option>
+                <option value="mA">mA</option>
+                <option value="uA" selected="selected">uA</option>
+                <option value="nA">nA</option>
+            </select>
+        </div>
+        
+        <h2>Other Parameters:</h2>
+
+        <div>
+            <p>Gain (Av):</p>
+            <input id="Av" type="text" value="" onkeyup="checkInput(this)" disabled="true" style="background-color:lightgrey;">
+        </div>
+
+    </body>
+</html>
